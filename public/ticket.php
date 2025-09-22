@@ -11,7 +11,7 @@ $id = uniqid();
 
 $data = "$event|$name|$id";
 
-// ✅ Minimal QR code instantiation (no unsupported methods)
+// ✅ Minimal QR code instantiation (compatible with your library)
 $qr = new QrCode($data);
 $writer = new PngWriter();
 $result = $writer->write($qr);
@@ -36,10 +36,26 @@ $qrCodeUri = $result->getDataUri();
       margin: auto;
       padding: 20px;
       border: 3px solid #ff00cc;
-      background: #fff;
-      color: #000;
+      background-image: url('../IMG-20250823-WA0035.jpg'); /* ✅ Your uploaded poster */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    #ticket::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* Overlay for readability */
+      border-radius: 10px;
+      z-index: 0;
+    }
+    #ticket > * {
+      position: relative;
+      z-index: 1;
     }
     #ticket img {
       width: 150px;
