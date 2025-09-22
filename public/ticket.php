@@ -9,7 +9,8 @@ $email = $_POST['email'] ?? '';
 $id = uniqid();
 
 $data = "$event|$name|$id";
-$qr = QrCode::create($data)->setSize(300)->setMargin(10);
+$qr = new QrCode($data); // ✅ Fixed instantiation
+$qr->setSize(300)->setMargin(10);
 $writer = new PngWriter();
 $result = $writer->write($qr);
 $qrCodeUri = $result->getDataUri();
