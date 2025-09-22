@@ -1,9 +1,7 @@
 {
   "name": "PHP Dev with GD",
-  "image": "mcr.microsoft.com/devcontainers/php:8.3",
-  "features": {
-    "ghcr.io/devcontainers/features/php-gd:1": {}
-  },
+  "image": "ghcr.io/devcontainers/images/php:8.3-bullseye",
+  "features": {},
   "forwardPorts": [8080],
   "customizations": {
     "vscode": {
