@@ -1,6 +1,6 @@
 {
   "name": "PHP Dev with GD",
-  "image": "mcr.microsoft.com/devcontainers/php:8.2",
+  "image": "mcr.microsoft.com/devcontainers/php:8.2-bookworm",
   "features": {},
   "forwardPorts": [8080],
   "customizations": {
