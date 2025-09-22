@@ -8,9 +8,8 @@ class TicketManager {
     public static function generate($event, $name) {
         $data = $event . '|' . $name . '|' . uniqid();
 
-        $result = Builder::create()
+        $result = Builder::fromString($data)
             ->writer(new PngWriter())
-            ->data($data)
             ->size(300)
             ->margin(10)
             ->build();
