@@ -1,7 +1,8 @@
 {
-  "name": "PHP Dev with GD",
-  "image": "mcr.microsoft.com/devcontainers/php:8.2-bookworm",
-  "features": {},
+  "name": "PHP with GD",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "forwardPorts": [8080],
   "customizations": {
     "vscode": {
