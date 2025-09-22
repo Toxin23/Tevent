@@ -3,7 +3,6 @@ require_once '../vendor/autoload.php';
 
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
 
 $name = $_POST['name'] ?? '';
 $event = $_POST['event'] ?? 'Night of Fun';
@@ -12,10 +11,8 @@ $id = uniqid();
 
 $data = "$event|$name|$id";
 
-// ✅ Compatible QR code instantiation
+// ✅ Minimal QR code instantiation (no unsupported methods)
 $qr = new QrCode($data);
-$qr->setErrorCorrectionLevel(new ErrorCorrectionLevelHigh());
-
 $writer = new PngWriter();
 $result = $writer->write($qr);
 $qrCodeUri = $result->getDataUri();
